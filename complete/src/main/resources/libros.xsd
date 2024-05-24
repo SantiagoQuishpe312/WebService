@@ -1,0 +1,79 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://spring.io/guides/gs-producing-web-service"
+           targetNamespace="http://spring.io/guides/gs-producing-web-service" elementFormDefault="qualified">
+
+    <xs:element name="getLibroRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="id" type="xs:long"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getLibroResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="libro" type="tns:libro"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="createLibroRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="libro" type="tns:libro"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="createLibroResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="libro" type="tns:libro"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="updateLibroRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="libro" type="tns:libro"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="updateLibroResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="libro" type="tns:libro"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="deleteLibroRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="id" type="xs:long"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="deleteLibroResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="status" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="libro">
+        <xs:sequence>
+            <xs:element name="id" type="xs:long" minOccurs="0"/>
+            <xs:element name="titulo" type="xs:string"/>
+            <xs:element name="autor" type="xs:string"/>
+            <xs:element name="editorial" type="xs:string"/>
+            <xs:element name="anoPublicacion" type="xs:int"/>
+            <xs:element name="isbn" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+</xs:schema>
